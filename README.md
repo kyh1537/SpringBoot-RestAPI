@@ -167,4 +167,64 @@
             }
             ]
            }
+ - /order/idx
+    -req : http://localhost:8080/order/idx?q=1
+    -res : {
+    "response": "success",
+    "message": "성공",
+    "data": [
+        {
+            "orderNumber": "ABC123ABC123",
+            "uidx": 1,
+            "name": "테스트 상품",
+            "regDate": "2021-01-10T22:00:00",
+            "updateDate": "2021-01-10T22:00:00"
+        }
+    ]
+}
+ - /order/mail
+    -req : http://localhost:8080/order/mail?q=kyh1537@naver.com
+    -res : {
+    "response": "success",
+    "message": "성공",
+    "data": [
+        {
+            "orderNumber": "ABC123ABC123",
+            "uidx": 1,
+            "name": "테스트 상품",
+            "regDate": "2021-01-10T22:00:00",
+            "updateDate": "2021-01-10T22:00:00"
+        }
+    ]
+}
+ - /order/name
+    -req : http://localhost:8080/order/name?q=김영호&page=0&size=30
+    -res : {
+    "response": "success",
+    "message": "성공",
+    "data": [
+        {
+            "orderNumber": "ABC123ABC123",
+            "uidx": 1,
+            "name": "테스트 상품",
+            "regDate": "2021-01-10T22:00:00",
+            "updateDate": "2021-01-10T22:00:00"
+        }
+    ]
+}   
+  - /order/last
+    -req : http://localhost:8080/order/last?page=0&size=30
+    -res : {
+    "response": "success",
+    "message": "성공",
+    "data": [
+        {
+            "orderNumber": "ABC123ABC123",
+            "uidx": 1,
+            "name": "테스트 상품",
+            "regDate": "2021-01-10T22:00:00",
+            "updateDate": "2021-01-10T22:00:00"
+        }
+    ]
+}
     
