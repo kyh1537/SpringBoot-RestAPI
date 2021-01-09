@@ -3,10 +3,9 @@
 ![Java_8](https://img.shields.io/badge/java-v1.8-red?logo=java)
 ![Spring_Boot](https://img.shields.io/badge/Spring_Boot-v2.4.1-green.svg?logo=spring)
 ![Spring_Security](https://img.shields.io/badge/Spring_Security-v5.1.5-green.svg?logo=spring)
-![GitHub stars](https://img.shields.io/github/stars/codej99/SpringRestApi?style=social)
 
 ### 0. 개요
-- SpringBoot2 framework 기반에서 RESTful api 서비스를 Step by Step으로 만들어 나가는 프로젝트
+- SpringBoot2 framework 기반에서 RESTful api 서비스프로젝트
 - daddyprogrammer.org에서 연재 및 소스 Github 등록
     - https://daddyprogrammer.org/post/series/springboot2-make-rest-api/
 
