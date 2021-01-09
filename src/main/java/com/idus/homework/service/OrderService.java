@@ -1,6 +1,5 @@
 package com.idus.homework.service;
 
-import com.idus.homework.dto.OrderDto;
 import com.idus.homework.entity.Order;
 import com.idus.homework.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
@@ -29,7 +28,7 @@ public class OrderService {
         return orderRepository.findAll(PageRequest.of(page, size));
     }
 
-    public ArrayList<Order> getAllOrderBy(int page, int size) {
+    public ArrayList<Order> getAllLastOrders(int page, int size) {
         return orderRepository.findAllByLastOrder(page * size, size);
     }
 }

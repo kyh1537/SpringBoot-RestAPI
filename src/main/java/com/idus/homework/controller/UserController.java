@@ -37,10 +37,7 @@ public class UserController {
 
     @ApiOperation(value = "로그인 API", notes = "메일과 패스워드를 입력하면 로그인 및 토큰이 발급됩니다.")
     @PostMapping("/login")
-    public Response login(@ApiParam(value = "메일, 패스워드", required = true, example = "{\n" +
-            "    \"mail\": \"kyh1537@naver.com\",\n" +
-            "    \"pw\": \"Kyh10805@@\"\n" +
-            "}") @RequestBody Map<String, String> map) {
+    public Response login(@ApiParam(value = "메일, 패스워드", required = true) @RequestBody Map<String, String> map) {
         try {
             User user = userService.login(map.get("mail"), map.get("pw"));
             Token token = Token.builder()

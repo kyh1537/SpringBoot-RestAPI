@@ -37,14 +37,14 @@ public class JwtTokenProvider {
      * 토큰 생성
      */
     public String createToken(String mail, List<String> roles) {
-        Claims claims = Jwts.claims().setSubject(mail); // JWT payload 에 저장되는 정보단위
-        claims.put("roles", roles); // 정보는 key / value 쌍으로 저장된다.
+        Claims claims = Jwts.claims().setSubject(mail);
+        claims.put("roles", roles);
         Date now = new Date();
         return Jwts.builder()
-                .setClaims(claims) // 정보 저장
-                .setIssuedAt(now) // 토큰 발행 시간 정보
-                .setExpiration(new Date(now.getTime() + TOKEN_VALID_TIME)) // set Expire Time
-                .signWith(SignatureAlgorithm.HS256, secretKey)  // 사용할 암호화 알고리즘
+                .setClaims(claims)
+                .setIssuedAt(now)
+                .setExpiration(new Date(now.getTime() + TOKEN_VALID_TIME))
+                .signWith(SignatureAlgorithm.HS256, secretKey)
                 .compact();
     }
 

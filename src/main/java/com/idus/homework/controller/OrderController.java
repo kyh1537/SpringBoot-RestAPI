@@ -80,7 +80,7 @@ public class OrderController {
     public Response orderLastList(@ApiParam(value = "페이지") @RequestParam(value = "page", defaultValue = "0") int page,
                                   @ApiParam(value = "페이지 사이즈") @RequestParam(value = "size", defaultValue = "10") int size) {
         try {
-            ArrayList<Order> orders = orderService.getAllOrderBy(page, size);
+            ArrayList<Order> orders = orderService.getAllLastOrders(page, size);
             return new Response("success", "성공", orders);
         } catch (Exception e) {
             return new Response("error", e.getMessage(), null);
