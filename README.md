@@ -15,7 +15,7 @@
 - SpringBoot 2.4.1
 - SpringSecurity 5.4.2
 - Jsonwebtoken:jjwt:0.9.1
-- JPA, MySql
+- JPA, MySql, Gradle
 - Intellij Community
 
 ### 2. DDL
@@ -60,4 +60,15 @@
        add constraint FK1
        foreign key (user_idx) 
        references user (idx);
-
+       
+ ### 3. 구현 API
+- 회원 가입
+- 회원 로그인(인증)
+- 회원 로그아웃(미구현)
+  - 해당 기능을 구현하려면 로그인시 발급한 토큰을 redis에 저장하고 로그아웃시에 redis에서 지우는 방식으로 진행해야 될 듯 합니다.
+- 단일 회원 상세 정보 조회
+- 단일 회원의 주문 목록 조회
+- 여러 회원 목록 조회 :
+    - 페이지네이션으로 일정 단위로 조회합니다.
+    - 이름, 이메일을 이용하여 검색 기능이 필요합니다.
+    - 각 회원의 마지막 주문 정보
