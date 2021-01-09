@@ -21,6 +21,7 @@
 
 ### 2. DDL
 - DB 연동이 되어 있다면 프로젝트 실행시 기본 생성
+- 프로젝트의 resources - migration에도 올려두었습니다.
 
 - create table user (
        idx bigint not null auto_increment,
@@ -75,3 +76,6 @@
     - 각 회원의 마지막 주문 정보
     
   #### 회원 권한의 경우 일반 회원인지 관리자인지 명확하게 기재되어 있지 않지만 회원 정보 및 주문 목록 조회 API를 보아 관리자 권한이 필요한 API인 듯하여 기본 가입시 ADMIN 권한으로 생성하였습니다.
+  
+ ### API example
+ 
