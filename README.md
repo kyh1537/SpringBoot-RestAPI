@@ -152,9 +152,9 @@
         }
     }
     
-    - /order
-       - req : http://localhost:8080/order?page=0&size=3
-       - res : {
+- /order
+   - req : http://localhost:8080/order?page=0&size=3
+   - res : {
             "response": "success",
             "message": "성공",
             "data": [
