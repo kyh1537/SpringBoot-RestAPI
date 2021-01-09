@@ -168,8 +168,8 @@
             ]
            }
  - /order/idx
-    -req : http://localhost:8080/order/idx?q=1
-    -res : {
+        - req : http://localhost:8080/order/idx?q=1
+        - res : {
     "response": "success",
     "message": "성공",
     "data": [
@@ -183,8 +183,8 @@
     ]
 }
  - /order/mail
-    -req : http://localhost:8080/order/mail?q=kyh1537@naver.com
-    -res : {
+        - req : http://localhost:8080/order/mail?q=kyh1537@naver.com
+        - res : {
     "response": "success",
     "message": "성공",
     "data": [
@@ -198,8 +198,8 @@
     ]
 }
  - /order/name
-    -req : http://localhost:8080/order/name?q=김영호&page=0&size=30
-    -res : {
+        - req : http://localhost:8080/order/name?q=김영호&page=0&size=30
+        - res : {
     "response": "success",
     "message": "성공",
     "data": [
@@ -213,8 +213,8 @@
     ]
 }   
   - /order/last
-    -req : http://localhost:8080/order/last?page=0&size=30
-    -res : {
+        - req : http://localhost:8080/order/last?page=0&size=30
+        - res : {
     "response": "success",
     "message": "성공",
     "data": [
