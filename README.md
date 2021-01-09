@@ -7,8 +7,9 @@
 ### 0. 개요
 - SpringBoot2 framework 기반의 RESTful api 프로젝트
 
-- Swagger
+- API Document(Swagger)
     - http://localhost:8080/swagger-ui.html
+    - swagger의 버그인지는 모르겠으나 @ApiParam의 example이 동작을 안하여 swagger-ui상에서 제대로 보이지 않음.
 
 ### 1. 개발환경
 - Java 8
