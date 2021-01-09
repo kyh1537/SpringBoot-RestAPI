@@ -21,7 +21,7 @@
 ### 2. DDL
 - DB 연동이 되어 있다면 프로젝트 실행시 기본 생성
 
-create table user (
+- create table user (
        idx bigint not null auto_increment,
         mail varchar(100) not null,
         name varchar(20) not null,
@@ -34,7 +34,7 @@ create table user (
         primary key (idx)
     ) engine=InnoDB;
     
-create table user_orders (
+- create table user_orders (
        order_number varchar(12) not null,
         name varchar(100) not null,
         reg_date datetime,
@@ -43,20 +43,20 @@ create table user_orders (
         primary key (order_number)
     ) engine=InnoDB;
     
-create table user_roles (
+- create table user_roles (
        user_idx bigint not null,
         roles varchar(255)
     ) engine=InnoDB;
     
        
-alter table user add constraint UK unique (mail);
+- alter table user add constraint UK unique (mail);
 
-alter table user_orders 
+- alter table user_orders 
        add constraint FK
        foreign key (uidx) 
        references user (idx);
 
-alter table user_roles 
+- alter table user_roles 
        add constraint FK1
        foreign key (user_idx) 
        references user (idx);
