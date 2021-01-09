@@ -37,6 +37,10 @@ dependencies {
     // https://mvnrepository.com/artifact/org.apache.directory.studio/org.apache.commons.codec
     compile group: 'org.apache.directory.studio', name: 'org.apache.commons.codec', version: '1.8'
 
+    // https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
