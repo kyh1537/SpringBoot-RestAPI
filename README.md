@@ -21,6 +21,7 @@
 
 ### 2. DDL
 - DB 연동이 되어 있다면 프로젝트 실행시 기본 생성
+- 프로젝트의 resources - migration에도 올려두었습니다.
 
 - create table user (
        idx bigint not null auto_increment,
@@ -75,3 +76,155 @@
     - 각 회원의 마지막 주문 정보
     
   #### 회원 권한의 경우 일반 회원인지 관리자인지 명확하게 기재되어 있지 않지만 회원 정보 및 주문 목록 조회 API를 보아 관리자 권한이 필요한 API인 듯하여 기본 가입시 ADMIN 권한으로 생성하였습니다.
+  
+ ### 3. API example
+ - /sing-up
+   - req : {
+    "name": "김영호",
+    "nickName": "hohoho",
+    "pw": "Kyh12345@@",
+    "phoneNumber":"010-1234-4444",
+    "mail": "kyh1537@naver.com",
+    "sex" : "남"
+      }
+   - res : {
+    "response": "success",
+    "message": "회원가입 완료",
+    "data": null
+      }
+      
+  - /login
+    - req : {
+        "mail": "kyh1537@naver.com",
+        "pw": "Kyh12345@@"
+        }
+    - res : {
+        "response": "success",
+        "message": "로그인 성공",
+        "data": {
+            "idx": 1,
+            "mail": "kyh1537@naver.com",
+            "token": "토큰값"
+         }
+      }
+      
+  - /user/idx
+     - req : http://localhost:8080/user/idx?q=1
+     - res : {
+        "response": "success",
+        "message": "성공",
+        "data": {
+            "idx": 1,
+            "name": "김영호",
+            "nickName": "hohoho",
+            "pw": null,
+            "phoneNumber": "010-1234-4444",
+            "mail": "kyh1537@naver.com",
+            "sex": "남",
+            "regDate": "2021-01-10T07:05:01",
+            "updateDate": "2021-01-10T07:05:01",
+            "roles": [
+                "ROLE_ADMIN"
+            ],
+            "orders": []
+        }
+    }
+    
+  - /user/mail
+    - req : http://localhost:8080/user/mail?q=kyh1537@naver.com
+    - res : {
+        "response": "success",
+        "message": "성공",
+        "data": {
+            "idx": 1,
+            "name": "김영호",
+            "nickName": "hohoho",
+            "pw": null,
+            "phoneNumber": "010-1234-4444",
+            "mail": "kyh1537@naver.com",
+            "sex": "남",
+            "regDate": "2021-01-10T07:05:01",
+            "updateDate": "2021-01-10T07:05:01",
+            "roles": [
+                "ROLE_ADMIN"
+            ],
+            "orders": []
+        }
+    }
+    
+- /order
+   - req : http://localhost:8080/order?page=0&size=3
+   - res : {
+            "response": "success",
+            "message": "성공",
+            "data": [
+            {
+                "orderNumber": "ABC123ABC123",
+                "uidx": 1,
+                "name": "테스트 상품",
+                "regDate": "2021-01-10T22:00:00",
+                "updateDate": "2021-01-10T22:00:00"
+            }
+            ]
+           }
+ - /order/idx
+    - req : http://localhost:8080/order/idx?q=1
+    - res : {
+    "response": "success",
+    "message": "성공",
+    "data": [
+        {
+            "orderNumber": "ABC123ABC123",
+            "uidx": 1,
+            "name": "테스트 상품",
+            "regDate": "2021-01-10T22:00:00",
+            "updateDate": "2021-01-10T22:00:00"
+        }
+    ]
+}
+ - /order/mail
+    - req : http://localhost:8080/order/mail?q=kyh1537@naver.com
+    - res : {
+    "response": "success",
+    "message": "성공",
+    "data": [
+        {
+            "orderNumber": "ABC123ABC123",
+            "uidx": 1,
+            "name": "테스트 상품",
+            "regDate": "2021-01-10T22:00:00",
+            "updateDate": "2021-01-10T22:00:00"
+        }
+    ]
+}
+ - /order/name
+    - req : http://localhost:8080/order/name?q=김영호&page=0&size=30
+    - res : {
+    "response": "success",
+    "message": "성공",
+    "data": [
+        {
+            "orderNumber": "ABC123ABC123",
+            "uidx": 1,
+            "name": "테스트 상품",
+            "regDate": "2021-01-10T22:00:00",
+            "updateDate": "2021-01-10T22:00:00"
+        }
+    ]
+}   
+  - /order/last
+      - req : http://localhost:8080/order/last?page=0&size=30
+      - res : {
+    "response": "success",
+    "message": "성공",
+    "data": [
+        {
+            "orderNumber": "ABC123ABC123",
+            "uidx": 1,
+            "name": "테스트 상품",
+            "regDate": "2021-01-10T22:00:00",
+            "updateDate": "2021-01-10T22:00:00"
+        }
+    ]
+}
+    
