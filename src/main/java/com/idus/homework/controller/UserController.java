@@ -54,7 +54,7 @@ public class UserController {
 
     @ApiOperation(value = "idx 기준 단일 회원 상세 정보 조회 API", notes = "검색하고자 하는 유저의 idx를 넘겨주면 해당 유저의 정보를 보내줍니다.")
     @GetMapping("/user/idx")
-    public Response userInfoByIdx(@ApiParam(value = "유저 인덱스", required = true, example = "1")@RequestParam("q") long idx) {
+    public Response userInfoByIdx(@ApiParam(value = "유저 인덱스", required = true, example = "1") @RequestParam("q") long idx) {
         try {
             User user = userService.getUserByIdx(idx);
             return new Response("success", "성공", new UserDto(user));

@@ -1,6 +1,6 @@
 package com.idus.homework.config.security;
 
-import com.idus.homework.service.UserService;
+import com.idus.homework.service.impl.UserServiceImpl;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
@@ -26,7 +26,7 @@ public class JwtTokenProvider {
 
     @Value("${spring.jwt.secret}")
     private String secretKey;
-    private final UserService userService;
+    private final UserServiceImpl userServiceImpl;
 
     @PostConstruct
     protected void init() {
@@ -59,7 +59,7 @@ public class JwtTokenProvider {
      * 토큰에서 인증 정보를 가져온다.
      */
     Authentication getAuthentication(String token) {
-        UserDetails userDetails = userService.loadUserByUsername(this.getUserMail(token));
+        UserDetails userDetails = userServiceImpl.loadUserByUsername(this.getUserMail(token));
         return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
     }
 
