@@ -77,5 +77,14 @@
     
   #### 회원 권한의 경우 일반 회원인지 관리자인지 명확하게 기재되어 있지 않지만 회원 정보 및 주문 목록 조회 API를 보아 관리자 권한이 필요한 API인 듯하여 기본 가입시 ADMIN 권한으로 생성하였습니다.
   
- ### API example
+ ### 3. API example
+ - /sing-up
+   - req : {
+    "name": "",
+    "nickName": "hohoho",
+    "pw": "Kyh12345@@",
+    "phoneNumber":"010-1234-4444",
+    "mail": "kyh1537@naver.com",
+    "sex" : "남"
+}
  
