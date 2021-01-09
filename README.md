@@ -80,11 +80,91 @@
  ### 3. API example
  - /sing-up
    - req : {
-    "name": "",
+    "name": "김영호",
     "nickName": "hohoho",
     "pw": "Kyh12345@@",
     "phoneNumber":"010-1234-4444",
     "mail": "kyh1537@naver.com",
     "sex" : "남"
-}
- 
+      }
+   - res : {
+    "response": "success",
+    "message": "회원가입 완료",
+    "data": null
+      }
+      
+  - /login
+    - req : {
+        "mail": "kyh1537@naver.com",
+        "pw": "Kyh12345@@"
+        }
+    - res : {
+        "response": "success",
+        "message": "로그인 성공",
+        "data": {
+            "idx": 1,
+            "mail": "kyh1537@naver.com",
+            "token": "토큰값"
+         }
+      }
+      
+  - /user/idx
+     - req : http://localhost:8080/user/idx?q=1
+     - res : {
+        "response": "success",
+        "message": "성공",
+        "data": {
+            "idx": 1,
+            "name": "김영호",
+            "nickName": "hohoho",
+            "pw": null,
+            "phoneNumber": "010-1234-4444",
+            "mail": "kyh1537@naver.com",
+            "sex": "남",
+            "regDate": "2021-01-10T07:05:01",
+            "updateDate": "2021-01-10T07:05:01",
+            "roles": [
+                "ROLE_ADMIN"
+            ],
+            "orders": []
+        }
+    }
+    
+  - /user/mail
+    - req : http://localhost:8080/user/mail?q=kyh1537@naver.com
+    - res : {
+        "response": "success",
+        "message": "성공",
+        "data": {
+            "idx": 1,
+            "name": "김영호",
+            "nickName": "hohoho",
+            "pw": null,
+            "phoneNumber": "010-1234-4444",
+            "mail": "kyh1537@naver.com",
+            "sex": "남",
+            "regDate": "2021-01-10T07:05:01",
+            "updateDate": "2021-01-10T07:05:01",
+            "roles": [
+                "ROLE_ADMIN"
+            ],
+            "orders": []
+        }
+    }
+    
+    - /order
+       - req : http://localhost:8080/order?page=0&size=3
+       - res : {
+            "response": "success",
+            "message": "성공",
+            "data": [
+            {
+                "orderNumber": "ABC123ABC123",
+                "uidx": 1,
+                "name": "테스트 상품",
+                "regDate": "2021-01-10T22:00:00",
+                "updateDate": "2021-01-10T22:00:00"
+            }
+            ]
+           }
+    
